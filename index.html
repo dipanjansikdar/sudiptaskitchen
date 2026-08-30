@@ -9,6 +9,7 @@
   <!-- Elegant display font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
     rel="stylesheet"
@@ -21,7 +22,7 @@
     ========================================================= */
 
     :root {
-      --black: #111111;
+      --background: #250806;
       --gold: #e4ae43;
       --cream: #f5ecd8;
     }
@@ -36,16 +37,24 @@
     }
 
 
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+
     /* =========================================================
        PAGE
     ========================================================= */
 
     body {
-      margin: 0;
       min-height: 100vh;
 
-      background: var(--cream);
-      color: var(--black);
+      background: var(--background);
+      color: var(--cream);
 
       font-family: "Cormorant Garamond", Georgia, serif;
 
@@ -65,7 +74,11 @@
       width: 100%;
       max-width: 1000px;
 
-      padding: 55px 25px;
+      padding: 55px 25px 45px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
 
@@ -74,8 +87,8 @@
     ========================================================= */
 
     .logo {
-      width: 260px;
-      height: 260px;
+      width: 300px;
+      height: 300px;
 
       margin: 0 auto 28px;
 
@@ -86,25 +99,27 @@
 
 
     /* =========================================================
-       BRAND NAME — PRIMARY
+       BRAND NAME — PRIMARY FOCUS
     ========================================================= */
 
     .brand-name {
-      margin: 0 auto 28px;
+      margin: 0 0 22px;
 
       color: var(--gold);
 
       font-family: "Cormorant Garamond", Georgia, serif;
 
-      font-size: clamp(48px, 7vw, 68px);
+      font-size: clamp(52px, 7vw, 76px);
 
       font-weight: 600;
 
-      letter-spacing: 3px;
+      letter-spacing: 4px;
 
       line-height: 0.95;
 
       text-transform: none;
+
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     }
 
 
@@ -115,32 +130,17 @@
     h1 {
       margin: 0;
 
+      color: var(--cream);
+
       font-family: "Cormorant Garamond", Georgia, serif;
 
-      font-size: clamp(34px, 5vw, 48px);
+      font-size: clamp(32px, 4.5vw, 46px);
 
       line-height: 1.05;
 
       font-weight: 500;
-    }
 
-
-    /* =========================================================
-       SUPPORTING MESSAGE
-    ========================================================= */
-
-    .message {
-      max-width: 650px;
-
-      margin: 30px auto 0;
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      font-size: clamp(21px, 3vw, 27px);
-
-      line-height: 1.5;
-
-      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
 
@@ -149,7 +149,7 @@
     ========================================================= */
 
     .coming-soon {
-      margin-top: 35px;
+      margin-top: 30px;
 
       color: var(--gold);
 
@@ -159,7 +159,7 @@
 
       font-weight: 600;
 
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
 
@@ -168,17 +168,19 @@
     ========================================================= */
 
     .footer {
-      margin-top: 55px;
+      margin-top: 48px;
+
+      color: var(--cream);
 
       font-family: Arial, Helvetica, sans-serif;
 
-      font-size: 12px;
+      font-size: 11px;
 
-      letter-spacing: 2px;
+      letter-spacing: 3px;
 
       text-transform: uppercase;
 
-      opacity: 0.65;
+      opacity: 0.55;
     }
 
 
@@ -189,48 +191,39 @@
     @media (max-width: 600px) {
 
       .page {
-        padding: 40px 22px;
+        padding: 35px 20px 35px;
       }
 
 
-      /* Smaller but still prominent logo */
+      /* Logo */
 
       .logo {
-        width: 190px;
-        height: 190px;
+        width: 210px;
+        height: 210px;
 
-        margin-bottom: 24px;
+        margin-bottom: 25px;
       }
 
 
-      /* Brand remains the dominant text */
+      /* Brand */
 
       .brand-name {
-        font-size: 38px;
+        font-size: 42px;
 
-        letter-spacing: 2px;
+        letter-spacing: 2.5px;
 
         line-height: 1;
 
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
 
 
-      /* Secondary headline */
+      /* Main headline */
 
       h1 {
-        font-size: 38px;
+        font-size: 34px;
 
         line-height: 1.05;
-      }
-
-
-      /* Supporting text */
-
-      .message {
-        font-size: 20px;
-
-        line-height: 1.45;
       }
 
 
@@ -239,14 +232,18 @@
       .coming-soon {
         font-size: 21px;
 
-        margin-top: 30px;
+        margin-top: 27px;
       }
 
 
       /* Footer */
 
       .footer {
-        margin-top: 45px;
+        margin-top: 40px;
+
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
       }
 
     }
@@ -259,14 +256,13 @@
 
   <main class="page">
 
-
     <!-- =======================================================
          SUDIPTA'S KITCHEN LOGO
     ======================================================== -->
 
     <img
       src="logo.png"
-      alt="Sudipta's Kitchen"
+      alt="Sudipta's Kitchen logo"
       class="logo"
     >
 
@@ -291,15 +287,6 @@
 
 
     <!-- =======================================================
-         SUPPORTING MESSAGE
-    ======================================================== -->
-
-    <p class="message">
-      We are preparing something special.
-    </p>
-
-
-    <!-- =======================================================
          COMING SOON
     ======================================================== -->
 
@@ -315,7 +302,6 @@
     <div class="footer">
       Helsingborg, Sweden
     </div>
-
 
   </main>
 
